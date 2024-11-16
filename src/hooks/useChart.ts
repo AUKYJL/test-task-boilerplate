@@ -58,7 +58,9 @@ export const useChart = (ref: RefObject<HTMLDivElement> | null) => {
   }, [timeFrame, symbol]);
   const getPairData = async (): Promise<IKline[]> => {
     const data: KlineData[] = (
-      await axiosInstance.get(`/klines?symbol=${symbol}&interval=${timeFrame}`)
+      await axiosInstance.get(
+        `/indexPriceKlines?pair=${symbol.toLowerCase()}&interval=${timeFrame}`,
+      )
     ).data;
 
     const klines: IKline[] = data.map((kline) => ({
