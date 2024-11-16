@@ -1,7 +1,28 @@
 .chart {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100%;
   width: 100%;
+}
+.loading {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 30px;
+  z-index: 2;
+}
+.loading::before {
+  content: "";
+  background: #000;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0.8;
+  z-index: -1;
 }
